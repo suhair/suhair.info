@@ -1,0 +1,6 @@
+Date: 25 March 2011
+Categories: site, personal
+
+h1. My new blog powered by Nesta
+
+I used to blog in the past using Microsoft's Oxite and then using a custom made one that never emerged from the private beta phase :). Lately I have been experimenting with Ruby stack of development and came to know about the Nesta ruby project. I am excited about its features and well, it is now the blogging engine for my site.
