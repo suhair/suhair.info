@@ -2,4 +2,4 @@ h1. Bash Basics
 
 p. Learning the essentials of bash basics is a must to survive the linux experience and at least in the deployment of web applications. I know little Bash scripting and this series of posts will outline the bash basics as I learn them, albeit very slowly.
 
-p. The first noticeable property of unix commands is that they are very short. Sometimes they are created by using the first few letters of a descriptive action. For example mv command is created from the two consonants of **m**o**v**e. 
+p. The first noticeable property of unix commands is that they are very short. Sometimes they are created by using the first few letters of a descriptive action. For example mv command is created from the two consonants of **m** o** v** e. 
