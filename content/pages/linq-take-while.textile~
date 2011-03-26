@@ -1,0 +1,8 @@
+h1. Linq TakeWhile
+
+p. @TakeWhile@ accepts a sequence and a predicate. It goes from the beginning of the sequence and return its elements while the predicate holds true. Once an element is found that does not satisfy the predicate, it stops. An example will illustrate it.
+
+bc. Enumerable.Range(0, int.MaxValue)
+                             .Select(n => Math.Pow(n, 2))
+                             .Where(squared => squared % 2 != 0)
+                             .TakeWhile(squared => squared < 10000).Sum();
