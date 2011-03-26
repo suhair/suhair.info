@@ -2,4 +2,8 @@ h1. Bash Basics
 
 p. Learning the essentials of bash basics is a must to survive the linux experience and at least in the deployment of web applications. I know little Bash scripting and this series of posts will outline the bash basics as I learn them, albeit very slowly.
 
-p. The first noticeable property of unix commands is that they are very short. Sometimes they are created by using the first few letters of a descriptive action. For example mv command is created from the two consonants of **m** o **v** e. 
+p. The first noticeable property of unix commands is that they are very short. Sometimes they are created by using the first few letters of a descriptive action. For example mv command is created from the two consonants of **m** o **v** e.
+
+p. When we supply bash with a command, it looks up the folders stored in the @$PATH$. The folders are separated with @:@ instead of @;@ in windows. @>@ represents redirection and content from the terminal could be redirected to a file using @>@. Bash script could be run by passing the file name as argument to the @bash@ command. Alternatively the script could be made standalone by giving executable status to the file.
+
+bc. chmod +x <filename>
