@@ -4,18 +4,18 @@ p. I have read many times that an algorithm is easy to grasp when coded in a fun
 
 bc.. public static IEnumerable<int > QuickSortInt(IEnumerable<int > toSort) 
  {
-        if (!toSort.Any())
-        {
-            return toSort;
-        }
-        int first = toSort.First();
-        var lesserSorted = QuickSort(toSort.Where(n => n < first));
-        var greaterSorted = QuickSort(toSort.Where(n => n > first));
-        return lesserSorted.Concat(new int[] { first }).Concat(greaterSorted);
+    if (!toSort.Any())
+    {
+        return toSort;
+    }
+    int first = toSort.First();
+    var lesserSorted = QuickSort(toSort.Where(n => n < first));
+    var greaterSorted = QuickSort(toSort.Where(n => n > first));
+    return lesserSorted.Concat(new int[] { first }).Concat(greaterSorted);
  }
 
 p. This is a recursive function and hence must have an edge case to prevent infinite recursion. 
 # It first specifies the edge case so that an empty sequence is considered as an already ordered one and stops execution
-# It finds out the first element in the sequence and it will act as **Pivot**. Any element in the sequence could act as a pivot but first element is chosen as it is very easy to fimd out.
+# It finds out the first element in the sequence and it will act as **Pivot**. Any element in the sequence could act as a pivot but first element is chosen as it is very easy to find out.
 # Separately sorts the elements lesser and greater than this pivot, recursively.
 # Finally all these two sequences are combined with the pivot sandwitched in between  
