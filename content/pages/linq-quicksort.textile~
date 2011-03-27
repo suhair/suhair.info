@@ -19,3 +19,18 @@ p. This is a recursive function and hence must have an edge case to prevent infi
 # It finds out the first element in the sequence and it will act as **Pivot**. Any element in the sequence could act as a pivot but first element is chosen as it is very easy to find out.
 # Separately sorts the elements lesser and greater than this pivot, recursively.
 # Finally all these two sequences are combined with the pivot sandwitched in between  
+
+This could be converted to a generic Quick sort as follows
+
+bc.. public static IEnumerable<T> QuickSort<T>(IEnumerable<T> toSort) where T:IComparable<T>
+  {
+      if (!toSort.Any())
+      {
+          return toSort;
+      }
+      T first = toSort.First();
+      var lesserSorted = QuickSort(toSort.Where(n => n.CompareTo(first) < 0));
+      var greaterSorted = QuickSort(toSort.Where(n => n.CompareTo(first) > 0));
+      return lesserSorted.Concat(new T[]{first}).Concat(greaterSorted);
+  }
+
