@@ -1,0 +1,19 @@
+h1. Linq QuickSort
+
+p. I have read many times that an algorithm is easy to grasp when coded in a functional style [citation needed]. QuickSort is an algorithm used, well, for sorting a sequence. The simplest case i can think of is a sequence of integers and let's implement it in a bit of functional way so that we are not immeresed in code ceremonies.
+
+bc..
+ 	public static IEnumerable<int > QuickSortInt(IEnumerable<int > toSort) 
+        {
+            if (!toSort.Any())
+            {
+                return toSort;
+            }
+            int first = toSort.First();
+            var lesserSorted = QuickSort(toSort.Where(n => n.CompareTo(first) < 0));
+            var greaterSorted = QuickSort(toSort.Where(n => n.CompareTo(first) > 0));
+
+            return lesserSorted.Concat(new int[] { first }).Concat(greaterSorted);
+        }
+
+p. This 

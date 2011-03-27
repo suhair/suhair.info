@@ -6,3 +6,8 @@ bc. Enumerable.Range(0, int.MaxValue)
                              .Select(n => Math.Pow(n, 2))
                              .Where(squared => squared % 2 != 0)
                              .TakeWhile(squared => squared < 10000).Sum();
+
+# It first emulates an infinite range. Poor man's infinite range in c# :).
+# It then maps the numbers to its square
+# It filters the squared number and removes all even ones
+# It calculates the sum of those odd squares which are less than 10000
