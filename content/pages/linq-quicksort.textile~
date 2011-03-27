@@ -3,16 +3,18 @@ h1. Linq QuickSort
 p. I have read many times that an algorithm is easy to grasp when coded in a functional style [citation needed]. QuickSort is an algorithm used, well, for sorting a sequence. The simplest case i can think of is a sequence of integers and let's implement it in a bit of functional way so that we are not immeresed in code ceremonies.
 
 bc.. public static IEnumerable<int > QuickSortInt(IEnumerable<int > toSort) 
-     {
-            if (!toSort.Any())
-            {
-                return toSort;
-            }
-            int first = toSort.First();
-            var lesserSorted = QuickSort(toSort.Where(n => n.CompareTo(first) < 0));
-            var greaterSorted = QuickSort(toSort.Where(n => n.CompareTo(first) > 0));
+ {
+        if (!toSort.Any())
+        {
+            return toSort;
+        }
+        int first = toSort.First();
+        var lesserSorted = QuickSort(toSort.Where(n => n < first));
+        var greaterSorted = QuickSort(toSort.Where(n => n > first));
+        return lesserSorted.Concat(new int[] { first }).Concat(greaterSorted);
+ }
 
-            return lesserSorted.Concat(new int[] { first }).Concat(greaterSorted);
-      }
-
-p. This 
+p. This is a recursive function and hence must have an edge case to prevent infinite recursion. 
+# It first specifies the edge case so that an empty sequence is considered as an already ordered one and stops execution
+# It finds out the first element in the sequence and it will act as **Pivot**. Any element in the sequence could act as a pivot but first element is chosen as it is very easy to fimd out.
+# 
