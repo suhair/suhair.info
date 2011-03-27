@@ -1,3 +1,6 @@
+Date: 27 March 2011
+Categories: c#, linq, algorithm
+
 h1. Linq QuickSort
 
 p. I have read many times that an algorithm is easy to grasp when coded in a functional style [citation needed]. QuickSort is an algorithm used, well, for sorting a sequence. The simplest case i can think of is a sequence of integers and let's implement it in a bit of functional way so that we are not immeresed in code ceremonies.

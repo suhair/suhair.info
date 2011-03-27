@@ -12,8 +12,8 @@ bc.. public static IEnumerable<int > QuickSortInt(IEnumerable<int > toSort)
         return toSort;
     }
     int first = toSort.First();
-    var lesserSorted = QuickSort(toSort.Where(n => n < first));
-    var greaterSorted = QuickSort(toSort.Where(n => n > first));
+    var lesserSorted = QuickSortInt(toSort.Where(n => n < first));
+    var greaterSorted = QuickSortInt(toSort.Where(n => n > first));
     return lesserSorted.Concat(new int[] { first }).Concat(greaterSorted);
  }
 
