@@ -2,4 +2,4 @@ h1. Lisp Symbols
 
 Although i am nowhere near a psoition to define what a symbols is in Lisp, I can list a few examples. The most common is @pi@. To get its value we simpley enter @pi@ into Lisp interpreter. To get the symbol itself we need to quote it like @'pi@. @eql@ takes any two objects and assesses they are identical and hence it could be used as equality test for symbols. Each symbol will have a print name that could be obtained by using the function @symbol-name@.
 
-p. Symbols could be organized to form packages and could be exported for use in other areas. Whenever you interacts with Lisp, you will be in a package and you can tell on which package by using @*package*@
+p. Symbols could be organized to form packages and could be exported for use in other areas. Whenever you interacts with Lisp, you will be in a package and you can tell on which package by using @*package*@.
