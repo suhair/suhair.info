@@ -5,7 +5,9 @@ From Person.Contact
 
 p. When the above sql snippet is run against the AdventureWorks database the FullName column alias will have some null values. Obviously each person will have a first name and last name as these columns are marked not null in the database. Since the MiddleName column may contain the null values, the null concatenation rules will come in to play. ANSI SQL states that a concatenation with a NULL should yield NULL and hence the default behavior.
 
-bc.. Select FirstName + N' ' + COALESCE(MiddleName, N'') + N' ' + LastName As FullName
+bc.. Select FirstName + N' ' + COALESCE(MiddleName, N' ') + N' ' + LastName As FullName
 From Person.Contact
+
+p. @COALESCE@ returns the first non null value from its parameters. In the above code it returns a space character when the MiddleName is null.
 
  
