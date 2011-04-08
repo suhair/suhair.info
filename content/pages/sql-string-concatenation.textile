@@ -1,3 +1,5 @@
+Date: 07 April 2011
+
 h1. Sql string concatenation
 
 bc.. Select FirstName + N' ' + MiddleName + N'' + LastName As FullName
