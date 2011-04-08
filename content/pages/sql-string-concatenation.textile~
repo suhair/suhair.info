@@ -1,0 +1,7 @@
+h1. Sql string concatenation
+
+bc.. Select FirstName + N' ' + MiddleName + N'' + LastName As FullName
+From Person.Contact
+
+p. When the above sql snippet is run against the AdventureWorks database the FullName column alias will have some null values. Obviously each person will have a first name and last name as these columns are marked not null in the database. Since the MiddleName column may contain the null values, the null concatenation rules will come in to play. ANSI SQL states that a concatenation with a NULL should yield NULL and hence the default behavior. 
+ 
