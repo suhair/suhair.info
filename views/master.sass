@@ -173,16 +173,7 @@ article
     max-width: 100%
     margin-bottom: $base-vertical-margin
 
-  code,
-  pre
-    background-color: $tint
-  code
-    padding: 1px 3px
-  pre
-    border-left: $border-style
-    background-color: $tint
-    code
-      padding: 0
+  
 
   footer
     border-top: $border-style
@@ -252,4 +243,37 @@ pre
     color: #000
     background: #f8f8ff
 
-  
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .javadoc
+  color: #998
+  font-style: italic
+
+
+pre .keyword,
+pre .css .rule .keyword,
+pre .winutils,
+pre .javascript .title,
+pre .lisp .title,
+pre .subst
+  color: #000
+  font-weight: bold
+
+
+pre .number,
+pre .hexcolor
+  color: #40a070
+
+
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula
+  color: #d14
+
+
+pre .title,
+pre .id
+  color: #900
+  font-weight: bold
