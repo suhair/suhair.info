@@ -16,10 +16,10 @@
       %script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
     = local_stylesheet_link_tag('local')
     %link(href="/articles.xml" rel="alternate" type="application/atom+xml")
-    = haml :analytics, :layout => false		
-	%script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
+    = haml :analytics, :layout => false
+    %script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
   %body
     #container
-      = haml :header, :layout => false	  
+      = haml :header, :layout => false 
       = yield
       = haml :footer, :layout => false
