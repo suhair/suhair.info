@@ -1,5 +1,5 @@
 The main responsibility of the @ControllerBase@ is to execute the @RequestContext@. In doing so it calls two other methods named @Initialize@ and @ExecuteCore@. A single instance of controller could not be used to fulfill multiple requests and hence @ControllerBase@ ensures that its @Execute@ is called only once. Similarly it could not fullfil the request if the @RequestContext@ is not provided.
 
-@Initialize@ method sets the @ControllerContext@ by using the given @RequestContext@. It is one of the hooks that can be used to initialize common properties for a controller.
+@Initialize@ method sets the @ControllerContext@ by using the given @RequestContext@. It is one of the "hooks":http://stackoverflow.com/questions/426110/asp-net-controller-base-class-user-identity-name/1650661#1650661 that can be used to initialize common properties for a controller.
 
 It has got a @TempData@ property of type @TempDataDictionary@. In child request this property returns the parent @TempData@. Another property of interest is @ValidateRequest@ which is set to @true@ by default. It has got a switchable @ValueProvider@ property also. Its @ViewData@ property is made by the @ViewDataDictionary@ class. The dynamic @ViewBag@ property reflects as well as propagates on this @ViewData@ property and provides an elegant means to access and modify the stored values.
