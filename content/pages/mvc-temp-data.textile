@@ -1,3 +1,7 @@
-@TempDataDictionary@ keys are case in-sesitive. Enumerating the @TempDataDictionary@ causes the values being marked for deletion and those values are deleted when the @Save@ function is called. In order to prevent the values from being deleted @Keep@ function can be used before calling @Save@. @Keep@ method can also be used to keep only certain values by passing those keys as arguments. Both @Load@ and @save@ functions on @TempDataDictionary@ are case insensitive.
+@TempDataDictionary@ keys are case in-sesitive. Enumerating the @TempDataDictionary@ causes the values being marked for deletion and those values are deleted when the @Save@ function is called. In order to prevent the values from being deleted @Keep@ function can be used before calling @Save@. @Keep@ method can also be used to keep only certain values by passing those keys as arguments. 
+
+@RedirectResult@ and @RedirectToRouteResult@ "always calls":http://weblogs.asp.net/jacqueseloff/archive/2009/11/17/tempdata-improvements.aspx the @Keep@ method on @TempDataDictionary@
+
+Both @Load@ and @save@ functions on @TempDataDictionary@ are case insensitive.
 
 @Peek@ method is handy when the value should not be marked for deletion. @Save@ method removes all the keys which are already read.
