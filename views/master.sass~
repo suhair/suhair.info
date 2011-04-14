@@ -22,7 +22,7 @@ body
   font: ($base-font * 1.05) Georgia, serif
   line-height: $vertical-rhythm
   color: $base-color
-  background-color: $background-color
+  background-color: #eee
 
 header[role=banner]
   h1,
