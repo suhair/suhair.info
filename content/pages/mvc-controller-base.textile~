@@ -1,0 +1,1 @@
+The main responsibility of the @ControllerBase@ is to execute the @RequestContext@. In doing so it calls two other methods named @Initialize@ and @ExecuteCore@. 
