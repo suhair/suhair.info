@@ -1,0 +1,8 @@
+@DefaultModelBinder@ has a method called @OnModelUpdating@ whose boolean return value determines whether model binding should be proceeded or not. By default this method returns @true@ and it could be overriden in the derived class if needed. 
+
+@BindComplexModel@ method is used internally to bind the arrays and collections (for example IList) in the form of values foo[0], foo[1], and foo[2]. It can also bind the dictionaries if the values are provided in the form of foo[0].key and foo[0].value. It can also bind objects and thier properties. If one of the properties is not part of the request and model binder provides a value for this property, it will not be updated on the model. If the model is adorned with the @Bind@ attribute, the binding rules are as follows.
+
+# Excluded properties are not bound
+# Properties whose values are not in the request are not bound
+
+@BindModel@ is the primary method in @DefaultModelBinder@. It can bind both simple types and objects. @BindModel@ performs request validation by default and is using @IUnValidatedValueProvider@ behind the scenes. It will skip the validation if the controller opts out from the validation by setting its @ValidateRequest@ property to @false@. It will also skips the validation if the model opts out by triggering the setting of @RequestValidationEnabled@ property on the @ModelMetaDataProvider@ to @false@.
