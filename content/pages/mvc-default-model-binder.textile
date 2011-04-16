@@ -6,3 +6,10 @@
 # Properties whose values are not in the request are not bound
 
 @BindModel@ is the primary method in @DefaultModelBinder@. It can bind both simple types and objects. @BindModel@ performs request validation by default and is using @IUnValidatedValueProvider@ behind the scenes. It will skip the validation if the controller opts out from the validation by setting its @ValidateRequest@ property to @false@. It will also skips the validation if the model opts out by triggering the setting of @RequestValidationEnabled@ property on the @ModelMetaDataProvider@ to @false@.
+
+@BindModel@ returns @null@ if the key is not found among the @ValueProviders@. @ValueProvider@ provided values will be overriden with the values provided from the @GetPropertyValue@ method. If there is type conversion error during binding the model state will also get updated accordingly.
+
+
+Internal:
+File: D:\Suhair\Asp.net MVC\mvc3-rtm-proper\mvc3-rtm-sources\mvc3\test\SystemWebMvcTest\Mvc\Test\DefaultModelBinderTest.cs 
+Lines: 555
