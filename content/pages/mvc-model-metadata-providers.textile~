@@ -1,0 +1,7 @@
+h1. Model Metadata Providers in Asp.net MVC
+
+The default model metadata provider is @DataAnnotationsModelMetadataProvider@. @Current@ property can be used to set the provider and if it is passed with a @null@ value, @EmptyModelMetadataProvider@ is set as the current one.
+
+@ModelMetadataProviders@ has a constructor that accepts @IResolver@ and the @Current@ property delegates the task of getting the @ModelMetadataProvider@ to this resolver. This class maintains a private static instance of itslef aptly named @_instance@ by passing @null@ as constructor argument.
+
+If the constructor is provided with @null@ for @IResolver@, it creates an instance of @SingleServiceResolver@ that can resolve @ModelMetadataProvider@ by passing the instance of @DataAnnotationsModelMetadataProvider@ as the default one. This kicks off the plug-in architecture for the @ModelMetadataProviders@. 
