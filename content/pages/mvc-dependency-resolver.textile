@@ -1,6 +1,6 @@
 Date: 18 April 2011
 
-h1. @DependencyResolver@
+h1. DependencyResolver
 
 @DependencyResolver@ has @InnerSetResolver@ groups of methods and the corresponding @InnerCurrent@ property that returns @IDependencyResolver@, which are used for the MVC internal use. @InnersSetResolver@ method has three overloads that accept the following arguments.
 
