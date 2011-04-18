@@ -1,0 +1,16 @@
+Date: 18 April 2011
+
+h1. GlobalFilterCollection
+
+@GlobalFilterCollection@ implements the following interfaces.
+
+# @IEnumerable@
+# @IEnumerable<Filter>@
+# @IFilterProvider@
+
+When a filter is added to this collection using the @Add@ method, it specifies the scope of the given @Filter@ as @FilterScope.Global@. @Add@ may be called with or without providing an order and in the former case it is assigned a value of -1.
+
+@getFilters@ method, coutesy of @IFilterProvider@, simply returns all of the added filters.
+
+MVC has one static @GlobalFilters@ class instantiates the @GlobalFilterCollection@ class and exposes through @Filters@ property which in turn is added in to the @FilterProviderCollection@ inside the static constructor of @FilterProviders@.
+
