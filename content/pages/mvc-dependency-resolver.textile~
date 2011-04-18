@@ -1,0 +1,13 @@
+h1. @DependencyResolver@
+
+@DependencyResolver@ has @InnerSetResolver@ groups of methods and the corresponding @InnerCurrent@ property that returns @IDependencyResolver@, which are used for the MVC internal use. @InnersSetResolver@ method has three overloads that accept the following arguments.
+
+# service locator as @Object@
+# @IDependencyResolver@
+# The function (Func) that provides a service and the function that provides services
+
+Constructor of @DependencyResolver@ sets the @InnerCurrent@ property to an instance of @DefaultDependencyResolver@. @DefaultDependencyResolver@ depends on the @CreateInstance@ method of @Activator@ for dependency resolution and return @null@ on failure. Because of this it returns a brand new service each time a service is requested.
+
+For an object to act like a common service locator, it should implement two methods named @GetInstance@ and @GetAllInstances@ and that should accept a @Type@ as argument. Apart from this criteria the former should return an @Object@ and the later an instance of @IEnumerable<Object>@.
+
+This class also exposes clones of the above mentioned methods and properties with the *Inner* part removed from them.

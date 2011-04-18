@@ -1,0 +1,7 @@
+h1. @ModelBinders@ in asp.net MVC
+
+@ModelBinders@ static class contains a property called @Binders@ that returns @ModelBinderDictionary@. By default there is three binders registered in this property. And they are as follows.
+
+# @ByteArrayModelBinder@ for @byte[]@ type
+# @HttpPostedFileBaseModelBinder@ for @HttpPostedFileBase@ and
+# @LinqBinaryModelBinder@ for @Binary@
