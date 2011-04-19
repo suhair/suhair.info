@@ -1,3 +1,5 @@
+Date: 19 April 2011
+
 h1. HandleError attribute
 
 Everytime a @HandleErrorAttribute@ is created a new @Object@ is created in the constructor and exposed as @TypeId@ property. Multiple @HandleErrorAttribute@ are allowed on class and methods. @ExceptionType@ proeprty defaults to the type of @Exception@ when not set. It is an error to assign @ExceptionType@ any other type than the specializations of @Exception@.
