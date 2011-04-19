@@ -1,0 +1,17 @@
+Date: 19 April 2011
+
+h1. HandleError attribute
+
+Everytime a @HandleErrorAttribute@ is created a new @Object@ is created in the constructor and exposed as @TypeId@ property. Multiple @HandleErrorAttribute@ are allowed on class and methods. @ExceptionType@ proeprty defaults to the type of @Exception@ when not set. It is an error to assign @ExceptionType@ any other type than the specializations of @Exception@.
+
+@Master@, a string property is empty when no master page is set for the @HandleError@. @OnException@ method is called when an exception occurs with @ExceptionContext@ as parameter. @OnException@ results in the following. If @View@ property is not set it defaults to "Error":http://stackoverflow.com/questions/183316/asp-net-mvc-handleerror/192371#192371.
+
+# @ExceptionContext@'s Result property is set to @ViewResult@ constructed from the View name and Master name specified in the @HandleErrorAttribute@.
+# @TempData@ of the controller is assigned to the @TempData@ of this @ViewResult@
+# A typed @ViewData@ of @HandleErrorInfo@ is created on the @ViewResult@ with the @Exception@, @ControllerName@, and @ActionName@ available on the model
+# If the custom errors configuration is disabled, it do nothing
+# If the @ExceptionContext@'s @ExceptionHandled@ property is set to true, it do nothing
+# Non 500 exception do nothing
+# If the context's exception type does not match that of attribute's, then it do nothing
+
+
