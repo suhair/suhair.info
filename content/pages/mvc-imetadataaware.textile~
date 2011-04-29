@@ -1,0 +1,16 @@
+h1. IMetadataAware interface
+
+@IMetadataAware@ is a brand new interface introduced in asp.net MVC 3.0. Those attributes which implement this interface can contribute information to the metadata. In order to contribute to the metadata, this interface has only one method called @OnMetadataCreated@ that gets the created @ModelMetadata@ as argument.
+
+The following are the built in implementations for this interface.
+
+# AdditionalMetadataAttribute
+# AllowHtmlAttribute
+
+@AdditionalMetadataAttribute@ accepts a string, and object as key and value respectively and insert them in to the @AdditionalValues@ property of the @ModelMetadata@ inside the @OnMetadataCreated@ method.
+
+Inside the @OnMetadataCreated@ method, the @AllowHtmlAttribute@ sets the @RequestValidationEnabled@ property of the given @ModelMetadata@ to @false@. Both @AdditionalMetadataAttribute@ and @AllowHtmlAttribute@ are sealed. 
+
+The static @ApplyMetadataAwareAttributes@ method on @AssociatedMetadataProvider@ iterates over the applied attributes on the model and calls the @OnMetadataCreated@ method passing the gven @ModelMetadata@ if the attribute has implemented @IMetadataAware@ interface.
+
+

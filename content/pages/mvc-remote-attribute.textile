@@ -1,0 +1,21 @@
+h1. RemoteAttribute
+
+@RemoteAttribute@ can be constructed from the following arguments
+
+# Action name, controller name, and area name
+# Action name and controller name
+# Route name
+
+@RemoteAttribute@ creates @RouteData@ property from the given constructor arguments.
+
+The static method @FormatPropertyForClientValidation@ prepends the given property with an asterisk (*) and a dot (.). The instance method @FormatAdditionalFieldsForClientValidation@ returns comma delimited string of validation field names. @RemoteAttribute's@ @IsValid@ property always returns @true@.
+
+@GetUrl@ is a protected method that can create the url string from the following arguments.
+
+# @ControllerContext@
+# RouteName 
+# RouteData
+
+Since RouteName is essential to figure out the url @GetUrl@ will throw an error if it could not find a valid one in the @RouteTable.Routes@ collection.
+
+If it could not find a valid route for the given controller and action name, it will throw an error.
