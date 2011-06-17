@@ -24,7 +24,6 @@
     
   %body
     #container
-      <div>A sample Html</div>
       = haml :header, :layout => false 
       = yield
       = haml :footer, :layout => false
