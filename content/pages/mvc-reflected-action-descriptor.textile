@@ -1,0 +1,17 @@
+Date: 2011 july 12
+
+h1. ReflectedActionDescriptor
+
+@ReflectedActionDescriptor@ is a specialization of @ActionDescriptor@ class. The class accepts the following constructor parameters.
+
+# @MethodInfo@
+# Action name
+# @ControllerDescriptor@
+# Validate method boolean value
+
+If the provided @MethodInfo@ has Ref or Out parameters, it will then throw @ArgumentException@. It will also throw the exception if the method is static or open generic.
+
+The @Execute@ method executes the given @MethodInfo@ with the passed in @ControllerContext@ and the parameters. It returns the end product using @ActionMethodDispatcher@. The execute method fails in the following situations.
+
+# If value is not provided for a non-nullable parameter or the value is null
+# If the parameter is provided with a wrong type of value
