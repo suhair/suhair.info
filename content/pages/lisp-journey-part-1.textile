@@ -1,0 +1,7 @@
+Date: 7 August 2011
+
+h1. Lisp overview
+
+# The interactive front end of the Lisp system is known as **toplevel**
+# Numbers in lisp evaluates to itself
+
