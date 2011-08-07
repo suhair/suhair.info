@@ -4,4 +4,53 @@ h1. Lisp overview
 
 # The interactive front end of the Lisp system is known as **toplevel**
 # Numbers in lisp evaluates to itself
-
+# Lisp uses **prefix** notation where operator precededes the arguments
+## **Infix** notation requires exactly 2 arguments, but prefix one can take any number of arguments, including none 
+# function call evaluation rule in lisp
+## The arguments are evaluated from left to right
+## The values of the arguments are passed to the function
+## If any of the arguments are function calls, they are evaluated according to the above rules
+# **quote** operator is an example for an operator that does not follow the above evaluation rule
+## It has special evaluation rule of its own
+## And the rule is **do nothing**
+## **'** is an abbreviation for **quote**
+# Integers and Strings in Lisp evaluates to themselves
+# **Symbols** are words and ordinarly they are converted to uppercase 
+## symbols do not evaluate to themself
+# Lists are represented as two or more elements enclosed in parantheses
+## Elements could be of any type including lists
+## Should quote lists, in order to avoid function call
+## Quote protects the whole expression, including the nested ones
+# **list** function could be used for building lists
+## As list is a function its arguments are evaluated
+# Two ways to represent the empty list
+## As a pair of parentheses with nothing bewteen them
+## Use the symbol **nil**
+# **cons** builds lists
+## Adds the first argument to the front of the list if the second argument is a list
+## list function is a convenient way to cons several things in to nil
+# **car** and **cdr** could be used for extracting things from a list
+## car of the list is the first element
+## cdr is everything after the first element
+## by using combination of car and cdr any element could be extracted
+# symbol **t** is the default representation for truth
+## like nil, t evaluates to itself
+## A function whose return value is indended to be interpreted as truth or falsity, is called **predicate**. Example is **listp**
+## Falsity is represented by **nil**
+### nil plays two roles in lisp
+### **null** function returns true of the empty list
+### **not** function returns true if its argument is false
+# The simplest conditional is **if**
+## Usually takes three arguments
+### A test expression
+### A then expression
+### An else expression
+## like quote, if is a special operator
+## last argument is optional, and defaults to nil
+## Although **t** is the default reprsesentation of trueth, everything except **nil** also counts as true in a logical context
+# logical operators **and** and **or** resemble conditionals
+## Both take any number of arguments, but only evaluate as many as they need
+## If all the arguments are true, **and** returns the value of the last one
+### If one of the arguments turn out to be false, none of the arguments after that get evaluated
+## **or** stops as soon as it finds an argument that is true
+## These two are **macros**
