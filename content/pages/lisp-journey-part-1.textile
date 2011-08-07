@@ -54,3 +54,85 @@ h1. Lisp overview
 ### If one of the arguments turn out to be false, none of the arguments after that get evaluated
 ## **or** stops as soon as it finds an argument that is true
 ## These two are **macros**
+
+# **defun** can be used for creating new functions
+## Usually takes three or more arguments
+### A name
+### A list of parameters
+### One or more body expressions
+## A symbol used as a placeholder is called variable
+### When a variable represents argument to a function, it is called parameter
+# Lisp makes no distinction between a program, a procedure, and a function
+
+# A function that calls itself is **recursive**
+# The predicate **eql** tests whether its two arguments are identical
+
+# The most general output function is **format**
+## Takes two or more arguments
+### first indicates where the output is to be printed
+### second is a string template
+#### **~A** indicates a position to be filled
+#### **~%** indicates a new line
+### remaining are the objects whose string representations need to be inserted in the template
+
+# The standard function for input is **read**
+## When given no arguments, it reads from the default place
+## read is a complete lisp parser
+
+# **let** introduces local variables
+## It has two parts
+### first is the instructions for creating variables of the form **(variable expression)**
+### second is the body, consisting of expression(s)
+
+# global variables are visible everywhere
+## **defparameter** creates global variables
+## **defconstant** also creates global variables
+## It is convention to begin and end gobal variable with asterisk (*)
+## **boundp** can be used to check whether some symbol is the name of a global variable or constant
+
+
+# The most common assignment operator is **setf**
+## It can assign to either set of variables
+## It will create implicit global varibales
+## First argument can be an expression instead of a name
+### In such cases, the value of the second argument is inserted in the place referred by the first
+## It also accepts any number of even arguments
+
+
+# **do** macro is the fundamental iteration operator in Lisp
+## first argument is a list of variable specifications. Each element of the form **(variable initial update)**
+## second argument should be one or more expressions
+### first expression is used to test whether iteration should stop
+### the remaining expressions will be evaluated in order when the iteration stops. And the value of the last will be returned.
+## the remining arguments comprise the body of the loop. They will be evaluated, in order, on each iteration
+
+# **progn** takes any number of expressions, evaluates them in order, and returns the value of last
+# lisp has simpler iteration operators for special cases
+# **dolist** for iterating through the elements of a list
+
+# **function** when given a name, returns the associated object
+## **#'** is the abbreviation for **function**
+
+# We can pass functions as arguments
+## **apply** takes a function and a list of arguments for it and returns the result of applying the function to the arguments
+### it can be given any number of arguments, so long as the last is a list
+### **funcall** do the same but does not need the srguments to be packaged in a list
+
+# To refer function literally we use **lambda expression**
+## It is a list containing
+### the symbol **lambda**
+### followed by a list of parameters
+### followed by a body of zero or more expressions 
+## lambda expression can be considered as the name of a function
+### It can be the first element of a function call
+
+# lisp has  a flexible approach to types
+## Values have type and not variables
+## Every object had a label attached to it, identifying its type (**manifest typing**)
+## any variable can hold objects of any type
+## An object always has more than one type
+## The type **t** is the supertype of all types
+## **typep** returns true if an object is of queried type
+
+
+
