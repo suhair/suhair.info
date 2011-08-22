@@ -1,0 +1,31 @@
+Date 7 August 2011
+
+h1. Lisp Journey Part 2 - Lists
+
+# The name lisp originally stood for **List processor**
+# **cons** combines two objects into a two part object called **cons**
+## it is a piar of pointers, first one is **car** and the second one is **cdr**
+## The two halves of a cons can point to any kind of object, including conses
+
+# **consp** returns true if its argument is a cons
+# **nil** is both an atom and a list
+# Each time cons is called, lisp allocates a new pair of memory with room for two pointers
+## If cons is called twice with the same arguments, we get values that look same, but are in fact distinct objects. **eql** can be used for comparing such equality
+## **equal** checks whether two lists have the same elements 
+# **copy-list** takes a list and returns a copy of it
+## The new list will have the same elements but contained in new conses
+## The return value is like a new bus with the same passengers
+
+# **append** function returns the concatenation of any number of lists
+# **nth** finds the element at a given position and **nthcdr** finds the nth cdr. Both of them are zero indexed
+# **last** returns the last cons in a list. It is not the same as getting the last element. To get the last element of the list we could take car of the last
+# there is **first** through **tenth** as functions that retrieve the corresponding element of a list. These functions are not zero indexed.
+
+# **mapcar** takes a function and one or more lists and returns the result of applying the function to elements taken from each list, until some list runs out
+## **maplist** is related and takes the same arguments, but calls the function on successive cdrs of the list 
+
+
+# Conses can also be considered as binary trees, with the car representing the right subtree and the cdr the left.
+# **copy-tree** takes a tree and returns a copy of it
+# **subst** replaces elements in a tree
+# Functions that operate on trees usually recurse down both the car and the cdr. Such functions are called **doubly recursive**
